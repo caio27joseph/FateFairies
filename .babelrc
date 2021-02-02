@@ -1,3 +1,20 @@
 {
-  "presets": ["next/babel"]
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@public": "./public",
+          "@icons": "./public/icons",
+          "@components": "./src/components",
+          "@entities": "./src/entities",
+          "@providers": "./src/providers/implementations/",
+          "@repositories": "./src/repositories/implementations/",
+          "@useCases": "./src/useCases"
+        }
+      }
+    ]
+  ]
 }

@@ -4,23 +4,26 @@
 
 ### Added
 
--
+- tests setup with jest
+- icons folder and svg declaration
+- inline svg with babel
+- ISpell entities
+- IValidatorSpell provider contract
+- ValidatorJS Provider for validations
+- ICreateSpellRepository repository contract
+- Prisma for database manipulation
+- PrismaRepository
+- CreateSpell UseCase
+- ValidateSpell UseCase
 
 ### Changed
 
--
+- dev path system with babel/typescript/path-intelissense
 
-### Fixed
+### Depedencies
 
--
-
-### Removed
-
--
-
-### Security
-
--
+- ValidateJs
+- Prisma/client
 
 ## [0.0.0] - 2021-01-30
 
