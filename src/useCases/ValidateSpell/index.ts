@@ -1,7 +1,7 @@
-import { ValidatorJsProvider } from "@providers/ValidatorJsProvider";
 import { ValidateSpellUseCase } from "./ValidateSpellUseCase";
+import ValidatorJsSpellProvider from "@providers/ValidatorJsProvider/ValidatorJsSpellProvider";
 
-const validatorJsProvider = new ValidatorJsProvider();
-const validateSpellUseCase = new ValidateSpellUseCase(validatorJsProvider);
+const spellProvider = new ValidatorJsSpellProvider();
+const validateSpellUseCase = new ValidateSpellUseCase(spellProvider);
 
 export { validateSpellUseCase };

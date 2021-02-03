@@ -1,9 +1,11 @@
+import { destroySpellUseCase } from "@useCases/DestroySpell";
 import { stringify } from "querystring";
 import { createSpellUseCase } from ".";
 import ICreateSpellDTO from "./ICreateSpellDTO";
 
-export default describe("CreateUserUseCase", () => {
+export default describe("CreateSpellUseCase", () => {
   const spell: ICreateSpellDTO = {
+    id: undefined,
     name: "Avada",
     description: "Kills the enemy",
   };
@@ -11,8 +13,9 @@ export default describe("CreateUserUseCase", () => {
     await createSpellUseCase
       .execute(spell)
       .then(s => {
-        const { name, description } = s;
-        expect({ name, description }).toEqual(spell);
+        const { name, description, id } = s;
+
+        expect({ name, description, id }).toEqual(spell);
       })
       .catch(e => {
         fail(e.message);
@@ -28,6 +31,7 @@ export default describe("CreateUserUseCase", () => {
   });
   it("shoul be a invalid form spell", async () => {
     const spell: ICreateSpellDTO = {
+      id: undefined,
       name: "",
       description: "Kills the enemy",
     };
@@ -37,5 +41,8 @@ export default describe("CreateUserUseCase", () => {
       .catch(e => {
         expect(e.message).toEqual("Invalid Spell");
       });
+  });
+  it("shoul destroy a spell normally", async () => {
+    await destroySpellUseCase.execute(spell);
   });
 });

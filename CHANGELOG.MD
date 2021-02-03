@@ -7,14 +7,13 @@
 - tests setup with jest
 - icons folder and svg declaration
 - inline svg with babel
-- ISpell entities
-- IValidatorSpell provider contract
-- ValidatorJS Provider for validations
-- ISpellRepository repository contract
-- Prisma for database manipulation
-- PrismaRepository
+- Spell entity
+- ValidatorJs provider
+- Prisma Repository
 - CreateSpell UseCase
 - ValidateSpell UseCase
+- DestroySpekk UseCase
+- uuid for id manipulation
 
 ### Changed
 
@@ -23,6 +22,7 @@
 ### Depedencies
 
 - ValidateJs
+- uuid
 - Prisma/client
 
 ## [0.0.0] - 2021-01-30
