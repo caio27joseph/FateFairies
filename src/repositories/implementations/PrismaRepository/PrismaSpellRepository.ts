@@ -1,9 +1,10 @@
 import { ISpell } from "@entities/ISpell";
-import { ICreateSpellRepository } from "../ICreateSpellRepository";
 import { PrismaClient } from "@prisma/client";
 import ICreateSpellDTO from "@useCases/CreateSpell/ICreateSpellDTO";
+import { ISpellRepository } from "~repositories/ISpellRepository";
 
-export class PrismaRepository implements ICreateSpellRepository {
+export default class PrismaSpellRepository implements ISpellRepository {
+  client = new PrismaClient();
   async findByName(name: string): Promise<ISpell> {
     const spell = await this.client.spell.findUnique({
       where: {
@@ -15,8 +16,7 @@ export class PrismaRepository implements ICreateSpellRepository {
     }
     return;
   }
-  client = new PrismaClient();
-  async createSpell(data: ICreateSpellDTO): Promise<ISpell> {
+  async create(data: ICreateSpellDTO): Promise<ISpell> {
     const newSpell: ISpell = await this.client.spell.create({
       data,
     });

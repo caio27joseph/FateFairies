@@ -10,7 +10,7 @@
 - ISpell entities
 - IValidatorSpell provider contract
 - ValidatorJS Provider for validations
-- ICreateSpellRepository repository contract
+- ISpellRepository repository contract
 - Prisma for database manipulation
 - PrismaRepository
 - CreateSpell UseCase

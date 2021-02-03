@@ -1,12 +1,12 @@
-import { PrismaRepository } from "@repositories/PrismaRepository";
+import PrismaSpellRepository from "@repositories/PrismaRepository/PrismaSpellRepository";
 import { validateSpellUseCase } from "@useCases/ValidateSpell";
 import { CreateUserController } from "./CreateSpellController";
 import { CreateSpellUseCase } from "./CreateSpellUseCase";
 
-const createSpellRepository = new PrismaRepository();
+const spellRepository = new PrismaSpellRepository();
 
 const createSpellUseCase = new CreateSpellUseCase(
-  createSpellRepository,
+  spellRepository,
   validateSpellUseCase
 );
 const createSpellController = new CreateUserController(createSpellUseCase);

@@ -12,7 +12,8 @@
           "@entities": "./src/entities",
           "@providers": "./src/providers/implementations/",
           "@repositories": "./src/repositories/implementations/",
-          "@useCases": "./src/useCases"
+          "@useCases": "./src/useCases",
+          "~": "./src"
         }
       }
     ]
