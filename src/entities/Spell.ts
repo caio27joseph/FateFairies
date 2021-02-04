@@ -1,5 +1,5 @@
 export type Spell = {
-  readonly id: string;
+  readonly id: string | undefined;
   name: string;
   description: string;
   published: boolean;

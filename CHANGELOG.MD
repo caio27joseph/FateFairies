@@ -14,6 +14,13 @@
 - ValidateSpell UseCase
 - DestroySpekk UseCase
 - uuid for id manipulation
+- spellicon.svg
+- SpellItem Component for show
+- Show Spell rote base
+- Index Spell rote base
+- styled-compontents and configuration (\_app, \_document)
+- global styles and theme
+- babel inline svg plugin
 
 ### Changed
 
