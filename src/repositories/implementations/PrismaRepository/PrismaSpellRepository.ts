@@ -7,9 +7,13 @@ import { ISpellRepository } from "~repositories/ISpellRepository";
 export default class PrismaSpellRepository implements ISpellRepository {
   client = new PrismaClient();
   async findById(id: string): Promise<Spell> {
-    const spell = await this.client.spell.findUnique({
+    const spell: Spell = await this.client.spell.findUnique({
       where: { id },
     });
+    spell.created_at = spell.createdAt.getTime();
+    spell.updated_at = spell.updatedAt.getTime();
+    spell.createdAt = null;
+    spell.updatedAt = null;
     return spell;
   }
   async destroy(data: IDestroySpellDTO): Promise<Spell> {
@@ -17,17 +21,25 @@ export default class PrismaSpellRepository implements ISpellRepository {
     return spell;
   }
   async findByName(name: string): Promise<Spell> {
-    const spell = await this.client.spell.findUnique({
+    const spell: Spell = await this.client.spell.findUnique({
       where: {
         name,
       },
     });
+    spell.created_at = spell.createdAt.getTime();
+    spell.updated_at = spell.updatedAt.getTime();
+    spell.createdAt = null;
+    spell.updatedAt = null;
     return spell;
   }
   async create(data: ICreateSpellDTO): Promise<Spell> {
-    const spell = await this.client.spell.create({
+    const spell: Spell = await this.client.spell.create({
       data,
     });
+    spell.created_at = spell.createdAt.getTime();
+    spell.updated_at = spell.updatedAt.getTime();
+    spell.createdAt = null;
+    spell.updatedAt = null;
     return spell;
   }
 }
