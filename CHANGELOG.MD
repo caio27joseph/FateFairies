@@ -21,10 +21,15 @@
 - styled-compontents and configuration (\_app, \_document)
 - global styles and theme
 - babel inline svg plugin
+- FindSpell UseCase
 
 ### Changed
 
 - dev path system with babel/typescript/path-intelissense
+
+### Fixed
+
+- Date serialization prisma -> next static props (added new fields to time stamps)
 
 ### Depedencies
 
