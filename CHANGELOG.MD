@@ -26,6 +26,7 @@
 ### Changed
 
 - dev path system with babel/typescript/path-intelissense
+- sqlite database to postgres on google cloud
 
 ### Fixed
 
