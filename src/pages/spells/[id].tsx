@@ -41,12 +41,12 @@ const getStaticPaths: GetStaticPaths = async ctx => {
       params: {
         id: spell.id,
       },
+      revalidate: 120,
     };
   });
   return {
     paths,
     fallback: false,
-    revalidate: 120,
   };
 };
 
