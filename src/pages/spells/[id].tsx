@@ -1,46 +1,46 @@
-import SpellItem from "@components/SpellItem";
-import { Spell } from "@entities/Skill";
+import SkillItem from "@components/SkillItem";
+import { Skill } from "@entities/Skill";
 import { PrismaClient } from "@prisma/client";
-import { findSpellUseCase } from "@useCases/FindSkill";
+import { findSkillUseCase } from "@useCases/FindSkill";
 import { AnimateSharedLayout } from "framer-motion";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 
 interface IProps {
-  spell: Spell;
+  skill: Skill;
 }
 
 const show: React.FC<IProps> = props => {
-  const { spell } = props;
+  const { skill } = props;
   return (
     <>
       <Head>
-        <title>Spells - {spell.name}</title>
+        <title>Skills - {skill.name}</title>
       </Head>
       {/* Navbar */}
       <AnimateSharedLayout>
-        <SpellItem spell={spell}></SpellItem>
-        <SpellItem unique spell={spell}></SpellItem>
+        <SkillItem skill={skill}></SkillItem>
+        <SkillItem unique skill={skill}></SkillItem>
       </AnimateSharedLayout>
     </>
   );
 };
 const getStaticProps: GetStaticProps = async ctx => {
-  const spell = await findSpellUseCase.execute({ id: ctx.params.id as string });
+  const skill = await findSkillUseCase.execute({ id: ctx.params.id as string });
   return {
     props: {
-      spell,
+      skill,
     },
     revalidate: 120,
   };
 };
 const getStaticPaths: GetStaticPaths = async ctx => {
   const prisma = new PrismaClient();
-  const spells = await prisma.spell.findMany();
-  const paths = spells.map(spell => {
+  const skills = await prisma.skill.findMany();
+  const paths = skills.map(skill => {
     return {
       params: {
-        id: spell.id,
+        id: skill.id,
       },
     };
   });

@@ -1,26 +1,26 @@
-import { Spell } from "@entities/Skill";
+import { Skill } from "@entities/Skill";
 import { AnimatePresence, motion } from "framer-motion";
 import { PropsWithChildren, useState } from "react";
 import Container from "./styles";
-import SpellIcon from "@icons/spellicon.svg";
+import SkillIcon from "@icons/skillicon.svg";
 
 interface IProps {
-  spell: Spell;
+  skill: Skill;
   unique?: boolean;
 }
 
-const SpellItem: React.FC<PropsWithChildren<IProps>> = props => {
-  const { spell } = props;
+const SkillItem: React.FC<PropsWithChildren<IProps>> = props => {
+  const { skill } = props;
   const [dropdown, setDropdown] = useState(false);
   return (
     <Container unique={props.unique} layout>
-      {/* spellname */}
-      <motion.div layout className="spell-header">
-        <SpellIcon className="spell-icon"></SpellIcon>
-        <h1 className="spell-name" onClick={() => setDropdown(!dropdown)}>
-          {spell.name}
+      {/* skillname */}
+      <motion.div layout className="skill-header">
+        <SkillIcon className="skill-icon"></SkillIcon>
+        <h1 className="skill-name" onClick={() => setDropdown(!dropdown)}>
+          {skill.name}
         </h1>
-        {/* spelldescription */}
+        {/* skilldescription */}
       </motion.div>
       <AnimatePresence>
         {(dropdown || props.unique) && (
@@ -44,9 +44,9 @@ const SpellItem: React.FC<PropsWithChildren<IProps>> = props => {
                 opacity: 0,
               },
             }}
-            className="spell-description"
+            className="skill-description"
           >
-            {spell.description}
+            {skill.description}
           </motion.p>
         )}
       </AnimatePresence>
@@ -54,4 +54,4 @@ const SpellItem: React.FC<PropsWithChildren<IProps>> = props => {
   );
 };
 
-export default SpellItem;
+export default SkillItem;
