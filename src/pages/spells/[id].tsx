@@ -31,6 +31,7 @@ const getStaticProps: GetStaticProps = async ctx => {
     props: {
       spell,
     },
+    revalidate: 120,
   };
 };
 const getStaticPaths: GetStaticPaths = async ctx => {
@@ -41,7 +42,6 @@ const getStaticPaths: GetStaticPaths = async ctx => {
       params: {
         id: spell.id,
       },
-      revalidate: 120,
     };
   });
   return {
