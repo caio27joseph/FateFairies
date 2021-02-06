@@ -1,5 +1,5 @@
 import PrismaSkillRepository from "@repositories/PrismaRepository/PrismaSkillRepository";
-import { FindSkillUseCase } from "./FIndSkillUseCase";
+import { FindSkillUseCase } from "./FindSkillUseCase";
 
 const skillRepository = new PrismaSkillRepository();
 
