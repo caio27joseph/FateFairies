@@ -1,4 +1,4 @@
-import { Spell } from "@entities/Spell";
+import { Spell } from "@entities/Skill";
 import { AnimatePresence, motion } from "framer-motion";
 import { PropsWithChildren, useState } from "react";
 import Container from "./styles";

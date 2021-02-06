@@ -1,4 +1,4 @@
-export interface IValidateSpellDTO {
+export interface IValidateSkillDTO {
   name: string;
   description: string;
 }

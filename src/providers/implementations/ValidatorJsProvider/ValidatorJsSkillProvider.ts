@@ -1,8 +1,8 @@
 import validate from "validate.js";
-import { IValidateSpellDTO } from "@useCases/ValidateSpell/IValidateSpellDTO";
-import { ISpellProvider } from "~providers/ISpellProvider";
+import { IValidateSkillDTO } from "@useCases/ValidateSkill/IValidateSkillDTO";
+import { ISkillProvider } from "~providers/ISkillProvider";
 
-export default class ValidatorJsProvider implements ISpellProvider {
+export default class ValidatorJsProvider implements ISkillProvider {
   validator = {
     name: {
       presence: { allowEmpty: false },
@@ -14,7 +14,7 @@ export default class ValidatorJsProvider implements ISpellProvider {
     },
   };
 
-  async validate(data: IValidateSpellDTO): Promise<any> {
+  async validate(data: IValidateSkillDTO): Promise<any> {
     return validate(data, this.validator);
   }
 }

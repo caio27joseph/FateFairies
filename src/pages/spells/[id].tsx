@@ -1,7 +1,7 @@
 import SpellItem from "@components/SpellItem";
-import { Spell } from "@entities/Spell";
+import { Spell } from "@entities/Skill";
 import { PrismaClient } from "@prisma/client";
-import { findSpellUseCase } from "@useCases/FindSpell";
+import { findSpellUseCase } from "@useCases/FindSkill";
 import { AnimateSharedLayout } from "framer-motion";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";

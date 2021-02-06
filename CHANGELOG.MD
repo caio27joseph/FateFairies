@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.2]
+
+### Changed
+
+- Changed Spell to Skill
+
 ## [0.0.1]
 
 ### Added

@@ -10,11 +10,11 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Spell {
-  id          String    @id
-  createdAt   DateTime? @default(now())
-  updatedAt   DateTime? @default(now()) @updatedAt
-  name        String    @unique
+model Skill {
+  id          String  @id
+  createdAt   Int
+  updatedAt   Int
+  name        String  @unique
   description String?
-  published   Boolean   @default(false)
+  published   Boolean @default(false)
 }
