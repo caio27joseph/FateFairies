@@ -46,6 +46,7 @@ const getStaticPaths: GetStaticPaths = async ctx => {
   return {
     paths,
     fallback: false,
+    revalidate: 120,
   };
 };
 
